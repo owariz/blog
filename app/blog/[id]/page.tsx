@@ -282,13 +282,6 @@ TypeScript 5.5 ทำให้การพัฒนาแอปพลิเค�
   }
 ];
 
-export async function generateStaticParams() {
-  // สร้าง params สำหรับทุก ๆ post
-  return posts.map((post) => ({
-    id: post.id.toString(),
-  }));
-}
-
 export default function BlogDetail({ params }: { params: { id: string } }) {
   const postIndex = posts.findIndex((p) => p.id.toString() === params.id);
   const post = posts[postIndex];
